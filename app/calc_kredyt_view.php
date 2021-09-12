@@ -4,18 +4,30 @@
 <head>
 <meta charset="utf-8" />
 <title>Kalkulator Kredytowy</title>
+<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
 </head>
 <body>
-<h2>Kalkulator kredytowy</h2>
-<p>Oblicz swoją miesięczną ratę kredytu:</p>
-<form action="<?php print(_APP_URL);?>/app/calc_kredyt.php" method="post">
-	<label for="id_amount">Kwota kredytu: </label>
-	<input id="id_amount" type="text" name="amount" value="<?php if(isset($x)) print($amount); ?>" /><br />
+
+<div style="width:90%; margin: 2em auto;">
+	<a href="<?php print(_APP_ROOT); ?>/app/inna_chroniona.php" class="pure-button">Kolejna chroniona strona</a>
+	<a href="<?php print(_APP_ROOT); ?>/app/security/logout_kredyt.php" class="pure-button pure-button-active">Wyloguj</a>
+</div>
+    
+<div style="width:90%; margin: 2em auto;"> 
+   
+<form action="<?php print(_APP_URL);?>/app/calc_kredyt.php" method="post" class="pure-form pure-form-stacked">
+	<legend>Kalkulator kredytowy</legend>
+        <p>Oblicz swoją miesięczną ratę kredytu:</p>
+        <fieldset>
+        
+        <label for="id_amount">Kwota kredytu: </label>
+	<input id="id_amount" type="text" name="amount" value="<?php out($amount) ?>" /><br />
 	<label for="id_period">Okres spłaty (miesiące): </label>
-	<input id="id_period" type="text" name="period" value="<?php if(isset($y)) print($period); ?>" /><br />
+	<input id="id_period" type="text" name="period" value="<?php out($period) ?>" /><br />
 	<label for="id_percent">Oprocentowanie: </label>
-	<input id="id_percent" type="text" name="percent" value="<?php if(isset($z)) print($percent); ?>" /><br />
-	<input type="submit" value="Oblicz ratę kredytu" />
+	<input id="id_percent" type="text" name="percent" value="<?php out($percent) ?>" /><br />
+        </fieldset>
+        <input type="submit" value="Oblicz ratę kredytu" />
 </form>	
 
 <?php
