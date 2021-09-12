@@ -9,12 +9,12 @@
 <h2>Kalkulator kredytowy</h2>
 <p>Oblicz swoją miesięczną ratę kredytu:</p>
 <form action="<?php print(_APP_URL);?>/app/calc_kredyt.php" method="post">
-	<label for="id_x">Kwota kredytu: </label>
-	<input id="id_x" type="text" name="x" value="<?php if(isset($x)) print($x); ?>" /><br />
-	<label for="id_y">Okres spłaty (miesiące): </label>
-	<input id="id_y" type="text" name="y" value="<?php if(isset($y)) print($y); ?>" /><br />
-	<label for="id_z">Oprocentowanie: </label>
-	<input id="id_z" type="text" name="z" value="<?php if(isset($z)) print($z); ?>" /><br />
+	<label for="id_amount">Kwota kredytu: </label>
+	<input id="id_amount" type="text" name="amount" value="<?php if(isset($x)) print($amount); ?>" /><br />
+	<label for="id_period">Okres spłaty (miesiące): </label>
+	<input id="id_period" type="text" name="period" value="<?php if(isset($y)) print($period); ?>" /><br />
+	<label for="id_percent">Oprocentowanie: </label>
+	<input id="id_percent" type="text" name="percent" value="<?php if(isset($z)) print($percent); ?>" /><br />
 	<input type="submit" value="Oblicz ratę kredytu" />
 </form>	
 
