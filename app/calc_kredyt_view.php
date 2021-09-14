@@ -13,65 +13,106 @@
 
 </head>
 <body>
- 
+ <div class="navbar navbar-inverse navbar-fixed-top headroom" >
+		<div class="container">
+			<div class="navbar-header">
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav pull-right">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li class="dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown">More Pages <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li><a href="sidebar-left.html">Left Sidebar</a></li>
+							<li><a href="sidebar-right.html">Right Sidebar</a></li>
+						</ul>
+					</li>
+					<li class="active"><a href="contact.html">Contact</a></li>			
+				</ul>
+			</div>
+		</div>
+	</div> 
+    <header id="head" class="secondary"></header>
     <div class="container">
         <div class="row"> 
+            <ol class="breadcrumb">
+                            <li><a>Home</a></li>
+                            <li class="active">Kalkulator Kredytowy</li>
+                    </ol>
+        </div>
+        <div class="row"> 
+            <article class="col-sm- maincontent">
             <header class="page-header">
                 <h1 class="page-title">Kalkulator kredytowy</h1>
             </header>
+        
             <p>Za pomocą kalkulatora możesz obliczyc wysokość swojej miesięcznej raty.</p>
-
-            <form action="<?php print(_APP_URL);?>/app/calc_kredyt.php" method="post">
-                <div class="col">
-                        <label for="id_amount">Kwota kredytu: </label>
-                        <input id="id_amount" type="text" placeholder="kwota w złotówkach" name="amount" value="<?php out($amount) ?>" /><br />
-                </div>
-                <div class="col">
-                    <label for="id_period">Okres spłaty: </label>
-                    <input id="id_period" type="text" placeholder="okres w miesiącach" name="period" value="<?php out($period) ?>" /><br />
-                </div>
-                <div class="col">
-                    <label for="id_percent">Oprocentowanie: </label>
-                    <input id="id_percent" type="text" placeholder="procent" name="percent" value="<?php out($percent) ?>" /><br />
-                </div>
-                    
-                        <div class="col text-left">
-                             <input class="btn btn-action" type="submit" value="Oblicz ratę kredytu">
+ 
+                <form action="<?php print(_APP_URL);?>/app/calc_kredyt.php" method="post">
+                    <div class="row">
+                        <div class="col-sm-4">
+                                <label for="id_amount">Kwota kredytu: </label>
+                                <input class="form-control" placeholder="kwota w złotówkach" name="amount" value="<?php out($amount) ?>" />
                         </div>
-            </form>	                         
+                        <div class="col-sm-4">
+                            <label for="id_period">Okres spłaty: </label>
+                            <input class="form-control" placeholder="okres w miesiącach" name="period" value="<?php out($period) ?>" />
+                        </div>
+                        <div class="col-sm-4">
+                            <label for="id_percent">Oprocentowanie: </label>
+                            <input class="form-control" placeholder="procent" name="percent" value="<?php out($percent) ?>" />
+                        </div>
+                    </div>
+                    <br> 
+                    <div class="row">
+                         <div class="col-sm-12 text-left">
+                              <input class="btn btn-action" type="submit" value="Oblicz ratę">
+                         </div>
+                    </div>
+                </form>
+            </article>
+        </div>       
+    </div>  
+    <br>
+    
+    
+<div class="container">
+    <div class="messages">
+        <div class="row">
+        <?php
+        //wyświeltenie listy błędów, jeśli istnieją
+        if (isset($messages)) {
+                if (count ( $messages ) > 0) {
+                echo '<h4>Wystąpiły błędy: </h4>';
+                echo '<ol class="err">';
+                        foreach ( $messages as $key => $msg ) {
+                                echo '<li>'.$msg.'</li>';
+                        }
+                        echo '</ol>';
+                }
+        }
+        ?> 
 
-    <div class="row">   
-<?php
-//wyświeltenie listy błędów, jeśli istnieją
-if (isset($messages)) {
-	if (count ( $messages ) > 0) 
-        {
-		echo '<ol style="margin: 15px; padding: 10px 10px 10px 30px; border-radius: 5px; background-color: #f00; width:300px;">';
-		foreach ( $messages as $key => $msg ) 
-                {
-			echo '<li>'.$msg.'</li>';
-		}
-		echo '</ol>';
-	}
-}
-?>
-    </div> 
+        </div> 
+    </div>
+</div> 
+    
+    
+    
 <?php if (isset($result)){ ?>
-   
-    <div class="row">   
-
-            <div style=" margin: 15px; padding: 10px; border-radius: 5px; background-color: #0fe; width:200px;">
-<?php echo 'Wysokość raty: '.$result. 'zł'; ?>
-            </div>
-
+    <div class="container">
+        <div class="row">
+	<h4>Wynik</h4>
+	<p class="res">
+<?php print($result); ?>
+	</p>
+<?php } ?>
         </div>
     </div>
-       </div>
-<?php } ?>
-    
-
+<br>  
+                
     <footer id="footer">
-
         <div class="footer2">
                 <div class="container">
                         <div class="row">
@@ -86,7 +127,6 @@ if (isset($messages)) {
                         </div> 
                 </div>
         </div>
-    </footer>
-            
+    </footer>            
 </body>
 </html>
