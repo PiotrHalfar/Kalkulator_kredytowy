@@ -3,21 +3,19 @@
 <html lang="pl">
 <head>
 
-        <meta charset="utf-8">
+        <meta charset="utf-8"/>
 	<title>Kalkulator Kredytowy</title>
 	<link rel="stylesheet" media="screen" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
-	<link rel="stylesheet" href="./lib/assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="./lib/assets/css/font-awesome.min.css">
-	<link rel="stylesheet" href="./lib/assets/css/bootstrap-theme.css" media="screen" >
-	<link rel="stylesheet" href="./lib/assets/css/main.css">
+	<link rel="stylesheet" href="<?php print(_APP_URL); ?> ../lib/assets/css/bootstrap.min.css">
+	<link rel="stylesheet" href="<?php print(_APP_URL); ?> ../lib/assets/css/font-awesome.min.css">
+	<link rel="stylesheet" href="<?php print(_APP_URL); ?> ../lib/assets/css/bootstrap-theme.css" media="screen" >
+	<link rel="stylesheet" href="<?php print(_APP_URL); ?> ../lib/assets/css/main.css">
 
 </head>
 <body>
  
     <div class="container">
-
         <div class="row"> 
-            <article class="col-sm-8 maincontent">
             <header class="page-header">
                 <h1 class="page-title">Kalkulator kredytowy</h1>
             </header>
@@ -41,7 +39,7 @@
                              <input class="btn btn-action" type="submit" value="Oblicz ratę kredytu">
                         </div>
             </form>	                         
-        
+
     <div class="row">   
 <?php
 //wyświeltenie listy błędów, jeśli istnieją
