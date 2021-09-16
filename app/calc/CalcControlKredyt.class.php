@@ -4,8 +4,8 @@
 
 require_once $conf->root_path.'/lib/smarty/Smarty.class.php';
 require_once $conf->root_path.'/lib/Messages.class.php';
-require_once $conf->root_path.'/app/CalcFormKredyt.class.php';
-require_once $conf->root_path.'/app/CalcResultKredyt.class.php';
+require_once $conf->root_path.'/app/calc/CalcFormKredyt.class.php';
+require_once $conf->root_path.'/app/calc/CalcResultKredyt.class.php';
 
 
 class CalcControlKredyt{
@@ -114,7 +114,7 @@ class CalcControlKredyt{
             $smarty->assign('res',$this->result);
 
             
-            $smarty->display($conf->root_path.'/app/calcKredytView.tpl');
+            $smarty->display($conf->root_path.'/app/calc/calcKredytView.tpl');
        }
 			
 }

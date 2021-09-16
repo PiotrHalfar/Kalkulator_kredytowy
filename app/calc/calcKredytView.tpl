@@ -13,22 +13,18 @@
 <body>
  <div class="navbar navbar-inverse navbar-fixed-top headroom" >
 		<div class="container">
-			<div class="navbar-header">
-			</div>
-			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav pull-right">
-					<li><a>Home</a></li>		
-					<li class="active"><a>Kalkulator Kredytowy</a></li>			
+					<li><a href="{$conf->action_url}">Strona Główna</a></li>		
+					<li class="active"><a href="{$conf->action_url}calcView">Kalkulator Kredytowy</a></li>			
 				</ul>
-			</div>
 		</div>
 	</div> 
     <header id="head" class="secondary"></header>
     <div class="container">
         <div class="row"> 
             <ol class="breadcrumb">
-                            <li><a>Home</a></li>
-                            <li class="active">Kalkulator Kredytowy</li>
+                            <li><a href="{$conf->action_url}">Strona Główna</a></li>
+                            <li class="active"><a href="{$conf->action_url}calcView">Kalkulator Kredytowy</a></li>
                     </ol>
         </div>
         <div class="row"> 
@@ -39,7 +35,7 @@
         
             <p>Za pomocą kalkulatora możesz obliczyc wysokość swojej miesięcznej raty.</p>
  
-                <form action="{$conf->app_url}/app/calcKredyt.php " method="post">
+                <form action="{$conf->action_root}calcCompute" method="post">
                     <div class="row">
                         <div class="col-sm-4">
                                 <label for="amount">Kwota kredytu: </label>
