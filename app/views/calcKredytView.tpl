@@ -11,7 +11,7 @@
 </head>
 
 <body>
- <div class="navbar navbar-inverse navbar-fixed-top headroom" >
+ <div class="navbar navbar-inverse navbar-static-top headroom" >
 		<div class="container">
 				<ul class="nav navbar-nav pull-right">
 					<li><a href="{$conf->action_url}">Strona Główna</a></li>		
@@ -19,7 +19,6 @@
 				</ul>
 		</div>
 	</div> 
-    <header id="head" class="secondary"></header>
     <div class="container">
         <div class="row"> 
             <ol class="breadcrumb">
@@ -52,8 +51,8 @@
                     </div>
                     <br> 
                     <div class="row">
-                         <div class="col-sm-12 text-left">
-                              <input class="btn btn-action" type="submit" value="Oblicz ratę">
+                         <div class="col-sm-4 text-left">
+                              <input class="btn btn-action btn-lg" type="submit" value="Oblicz ratę">
                          </div>
                     </div>
                 </form>

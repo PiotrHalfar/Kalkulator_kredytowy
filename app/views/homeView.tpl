@@ -14,7 +14,7 @@
 
 <body class="home">
 	<!-- Fixed navbar -->
-	<div class="navbar navbar-inverse navbar-fixed-top headroom" >
+	<div class="navbar navbar-inverse navbar-static-top headroom" >
 		<div class="container">
 				<ul class="nav navbar-nav pull-right">
 					<li class="active"><a href="{$conf->action_url}">Strona Główna</a></li>
