@@ -15,21 +15,17 @@ require_once 'init.php';
 switch ($action) {
 	default : // 'strona domowa'
 	    // załaduj definicję kontrolera
-                include_once 'app/controllers/HomeControl.class.php';
-                $control = new HomeControl ();
+                $control = new app\controllers\HomeControl ();
 		$control->generateView ();
 	break;
         case 'calcView' :
-                include_once 'app/controllers/CalcControlKredyt.class.php';
 		// utwórz obiekt i uzyj
-		$control = new CalcControlKredyt ();
+		$control = new app\controllers\CalcControlKredyt ();
 		$control->generateView ();
         break;
 	case 'calcCompute' :
-		// załaduj definicję kontrolera
-		include_once 'app/controllers/CalcControlKredyt.class.php';
 		// utwórz obiekt i uzyj
-		$control = new CalcControlKredyt ();
+		$control = new app\controllers\CalcControlKredyt ();
 		$control->process ();
 	break;
 

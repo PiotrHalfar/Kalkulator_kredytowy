@@ -2,8 +2,12 @@
 // W skrypcie definicji kontrolera nie trzeba dołączać problematycznego skryptu config.php,
 // ponieważ będzie on użyty w miejscach, gdzie config.php zostanie już wywołany.
 
-require_once 'CalcFormKredyt.class.php';
-require_once 'CalcResultKredyt.class.php';
+namespace app\controllers;
+
+//zamieniamy zatem 'require' na 'use' wskazując jedynie przestrzeń nazw, w której znajduje się klasa
+
+use app\forms\CalcFormKredyt;
+use app\transfer\CalcResultKredyt;
 
 class CalcControlKredyt{
 
@@ -75,7 +79,7 @@ class CalcControlKredyt{
 	 * Pobranie wartości, walidacja, obliczenie i wyświetlenie
 	 */
 	public function process(){
-                global $conf;
+             
 		$this->getparams();
 		
 		if ($this->validate()) {
