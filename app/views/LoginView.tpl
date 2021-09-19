@@ -60,12 +60,6 @@
 	</ol>
 {/if}
 
-{if isset($res->result)}
-	<h4>Wysokość raty wynosi:</h4>
-	<p class="res">
-	{$res->result}zł
-	</p>
-{/if}
 <br>  
     </div>  
     </div>

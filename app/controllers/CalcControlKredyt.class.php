@@ -98,13 +98,42 @@ class CalcControlKredyt{
 						getMessages()->addError('Tylko administrator może wykonać tę operację');
 					}
 			getMessages()->addInfo('Wykonano obliczenia.');
+                        
+                        try{
+                            $database = new \Medoo\Medoo([
+                       
+                                'type' => 'mysql',
+                                'host' => 'localhost',
+                                'database' => 'kalkulator',
+                                'username' => 'root',
+                                'password' => '',
+                                
+                                'charset' => 'utf8',
+                                'collation' => 'utf8_polish_ci',
+                                'port' => 3306,
+
+                                'option' => [
+                                        \PDO::ATTR_CASE => \PDO::CASE_NATURAL,
+                                        \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION
+                                ],
+ 
+                            ]);
+                            $database->insert("wynik", [
+                                "kwota" => $this->form->amount,
+                                "okres_splaty" => $this->form->period,
+                                "procent" => $this->form->percent,
+                                "rata" => $this->result->result,
+                                "data" => date("Y-m-d H:i:s")
+                                ]);
+                        } catch (\PDOException $ex) {
+                            getMessages()->addError("DB Error: ".$ex->getMessage());
+                        }
 		}
 		
 		$this->generateView();
               
 	}
 	public function action_calcShow(){
-		getMessages()->addInfo('Witaj w kalkulatorze');
 		$this->generateView();
 	}
 	

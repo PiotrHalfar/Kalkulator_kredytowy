@@ -7,7 +7,6 @@ namespace app\controllers;
 class HomeControl{
     
         public function action_homeShow(){
-		getMessages()->addInfo('Witaj w na stronie domowej');
 		$this->generateView();
 	}
 	public function generateView()
