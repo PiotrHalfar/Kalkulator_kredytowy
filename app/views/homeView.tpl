@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -16,9 +15,11 @@
 	<!-- Fixed navbar -->
 	<div class="navbar navbar-inverse navbar-static-top headroom" >
 		<div class="container">
+         
 				<ul class="nav navbar-nav pull-right">
 					<li class="active"><a href="{$conf->action_url}">Strona Główna</a></li>
 					<li><a href="{$conf->action_url}calcView">Kalkulator Kredytowy</a></li>
+                                        <li><a href="{$conf->action_url}logout">Wyloguj</a></li>                        
 				</ul>
 		</div>
 	</div> 
@@ -37,7 +38,6 @@
         <div class="footer2">
                 <div class="container">
                         <div class="row">
-
                                 <div class="col-md-12 widget">
                                         <div class="widget-body">
                                                 <p class="text-right">

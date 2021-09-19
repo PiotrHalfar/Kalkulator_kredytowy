@@ -10,23 +10,18 @@ require_once 'init.php';
 
 // Dodatkowo zmieniono organizację kontrolerów i widoków. Teraz wszystkie są w odpowiednio nazwanych folderach w app
 
-
+getConf()->login_action = 'login'; //określenie akcji logowania - robimy to w tym miejscu, ponieważ tu są zdefiniowane wszystkie akcje
 
 switch ($action) {
 	default : // 'strona domowa'
-	    // załaduj definicję kontrolera
-                $control = new app\controllers\HomeControl ();
-		$control->generateView ();
-	break;
+                 control('app\\controllers', 'HomeControl', 'generateView', ['user', 'admin']);
+        case 'login': 
+		control('app\\controllers', 'LoginControl', 'doLogin');
         case 'calcView' :
-		// utwórz obiekt i uzyj
-		$control = new app\controllers\CalcControlKredyt ();
-		$control->generateView ();
-        break;
+                control('app\\controllers', 'CalcControlKredyt', 'generateView', ['user','admin'] );
 	case 'calcCompute' :
-		// utwórz obiekt i uzyj
-		$control = new app\controllers\CalcControlKredyt ();
-		$control->process ();
-	break;
+                control(null, 'CalcControlKredyt', 'process', ['user','admin']);
+        case 'logout' : 
+		control(null, 'LoginControl', 'doLogout', ['user','admin']);
 
 }

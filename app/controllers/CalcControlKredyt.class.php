@@ -90,11 +90,13 @@ class CalcControlKredyt{
                         $this->form->percent = floatval($this->form->percent);
                         
 			getMessages()->addInfo('Parametry poprawne.');
-				
+			if (inRole('admin')) {	
 			//wykonanie obliczen oraz zaokrąglenie wyniku
 			$this->result->result = ($this->form->amount / $this->form->period) + (($this->form->amount / $this->form->period)* $this->form->percent/100); //dzielimy kwote przez liczbe miesiecy a nastepnie obliczamy procent z kwoty i dodajemy calosc
                         $this->result->result = round($this->result->result, 2); //zaokraglenie wyniku do 2 liczb po przecinku   
-			
+			} else {
+						getMessages()->addError('Tylko administrator może wykonać tę operację');
+					}
 			getMessages()->addInfo('Wykonano obliczenia.');
 		}
 		
@@ -104,7 +106,7 @@ class CalcControlKredyt{
 	
 	public function generateView()
        {  
-         
+                getSmarty()->assign('user',unserialize($_SESSION['user']));
 		getSmarty()->assign('form',$this->form);
 		getSmarty()->assign('res',$this->result);
 		
