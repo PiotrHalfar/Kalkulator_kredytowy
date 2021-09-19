@@ -14,8 +14,8 @@
  <div class="navbar navbar-inverse navbar-static-top headroom" >
 		<div class="container">
 				<ul class="nav navbar-nav pull-right">
-					<li><a href="{$conf->action_url}">Strona Główna</a></li>		
-					<li class="active"><a href="{$conf->action_url}calcView">Kalkulator Kredytowy</a></li>
+					<li><a href="{$conf->action_url}homeShow">Strona Główna</a></li>		
+					<li class="active"><a href="{$conf->action_url}calcShow">Kalkulator Kredytowy</a></li>
                                         <li><a href="{$conf->action_url}logout">Wyloguj</a></li>    
 				</ul>
                                 <div class="login"> 
@@ -26,8 +26,8 @@
     <div class="container">
         <div class="row"> 
             <ol class="breadcrumb">
-                            <li><a href="{$conf->action_url}">Strona Główna</a></li>
-                            <li class="active"><a href="{$conf->action_url}calcView">Kalkulator Kredytowy</a></li>
+                            <li><a href="{$conf->action_url}homeShow">Strona Główna</a></li>
+                            <li class="active"><a href="{$conf->action_url}calcShow">Kalkulator Kredytowy</a></li>
                     </ol>
         </div>
         <div class="row"> 

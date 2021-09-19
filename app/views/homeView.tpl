@@ -17,8 +17,8 @@
 		<div class="container">
          
 				<ul class="nav navbar-nav pull-right">
-					<li class="active"><a href="{$conf->action_url}">Strona Główna</a></li>
-					<li><a href="{$conf->action_url}calcView">Kalkulator Kredytowy</a></li>
+					<li class="active"><a href="{$conf->action_url}homeShow">Strona Główna</a></li>
+					<li><a href="{$conf->action_url}calcShow">Kalkulator Kredytowy</a></li>
                                         <li><a href="{$conf->action_url}logout">Wyloguj</a></li>
                                         
 				</ul>
@@ -34,7 +34,7 @@
 			<div class="row">
 				<h1 class="lead">Witaj na stronie z kalkulatorami</h1>
 				<p class="tagline">Za pomocą naszych kalkulatorów obliczysz wysokość raty kredytu!</p>
-				<p><a class="btn btn-action btn-lg" href="{$conf->action_url}calcView"">Kalkulator Kredytowy</a></p>
+				<p><a class="btn btn-action btn-lg" href="{$conf->action_url}calcShow"">Kalkulator Kredytowy</a></p>
 			</div>
 		</div>
 	</header>
