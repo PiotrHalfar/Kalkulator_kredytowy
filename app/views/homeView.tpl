@@ -11,7 +11,7 @@
 	<link rel="stylesheet" href="{$conf->app_url}/css/main.css">
 </head>
 
-<body class="home">
+<body>
 	<!-- Fixed navbar -->
 	<div class="navbar navbar-inverse navbar-static-top headroom" >
 		<div class="container">
@@ -19,9 +19,14 @@
 				<ul class="nav navbar-nav pull-right">
 					<li class="active"><a href="{$conf->action_url}">Strona Główna</a></li>
 					<li><a href="{$conf->action_url}calcView">Kalkulator Kredytowy</a></li>
-                                        <li><a href="{$conf->action_url}logout">Wyloguj</a></li>                        
+                                        <li><a href="{$conf->action_url}logout">Wyloguj</a></li>
+                                        
 				</ul>
+                               <div class="login"> 
+                                    <span>użytkownik: {$user->login}, rola: {$user->role}</span>
+                               </div>
 		</div>
+                                        
 	</div> 
 
 	<header id="head">

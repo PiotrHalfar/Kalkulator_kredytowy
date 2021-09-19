@@ -94,7 +94,8 @@ img.pull-left { margin-right: 10px; }
 	border-radius: 1em;
 	color: #222;
 }
-
+.login { margin: 1em auto;
+    color:#fff;}
 .err { background-color: #f55742; }
 .inf { background-color: #8df542; }
 .res { background-color: #66f2f2; }

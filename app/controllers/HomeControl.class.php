@@ -8,6 +8,7 @@ class HomeControl{
 
 	public function generateView()
        {        
+            getSmarty()->assign('user',unserialize($_SESSION['user']));
             getSmarty()->display('homeView.tpl');
        }
 			

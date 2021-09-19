@@ -16,9 +16,12 @@
 				<ul class="nav navbar-nav pull-right">
 					<li><a href="{$conf->action_url}">Strona Główna</a></li>		
 					<li class="active"><a href="{$conf->action_url}calcView">Kalkulator Kredytowy</a></li>
-                                        <li><a href="{$conf->action_url}logout">Wyloguj</a></li>  
+                                        <li><a href="{$conf->action_url}logout">Wyloguj</a></li>    
 				</ul>
-		</div>
+                                <div class="login"> 
+                                    <span>użytkownik: {$user->login}, rola: {$user->role}</span>
+                               </div>
+                               </div>
 	</div> 
     <div class="container">
         <div class="row"> 
